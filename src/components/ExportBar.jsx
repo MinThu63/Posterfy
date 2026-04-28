@@ -5,28 +5,81 @@ import JSZip from 'jszip'
 import { socialSizes } from '../data/palettes'
 import './ExportBar.css'
 
+// Wait for all fonts to be fully loaded before capture
+async function waitForFonts() {
+  if (document.fonts && document.fonts.ready) {
+    await document.fonts.ready
+  }
+  // Extra safety delay for rendering
+  await new Promise(r => setTimeout(r, 200))
+}
+
+// Prepare the poster element for capture:
+// - Remove scale transform so html2canvas gets the real size
+// - Force computed font-family inline so html2canvas picks it up
+function prepareForCapture(el) {
+  const wrapper = el.closest('.poster-scale-container')
+  const origTransform = wrapper?.style.transform || ''
+  if (wrapper) wrapper.style.transform = 'none'
+
+  // Force font-family on all text nodes inside the poster
+  const fontFamily = getComputedStyle(el).getPropertyValue('--font')?.trim()
+  const textEls = el.querySelectorAll('h1, h2, h3, p, span, strong, div')
+  const origFonts = []
+  textEls.forEach((te) => {
+    origFonts.push(te.style.fontFamily)
+    const computed = getComputedStyle(te).fontFamily
+    te.style.fontFamily = computed || `${fontFamily}, sans-serif`
+  })
+
+  return () => {
+    if (wrapper) wrapper.style.transform = origTransform
+    textEls.forEach((te, i) => {
+      te.style.fontFamily = origFonts[i]
+    })
+  }
+}
+
 export default function ExportBar({ posterSize, showToast }) {
   const [exporting, setExporting] = useState(false)
 
   const capture = async (customWidth, customHeight) => {
     const el = document.getElementById('poster-capture')
     if (!el) return null
-    // Temporarily resize for capture if needed
+
+    await waitForFonts()
+
     const origW = el.style.width
     const origH = el.style.minHeight
     if (customWidth) {
       el.style.width = customWidth + 'px'
       el.style.minHeight = customHeight + 'px'
     }
+
+    // Wait for layout reflow
+    await new Promise(r => setTimeout(r, 150))
+
+    const restore = prepareForCapture(el)
+
+    // Another small delay after removing transform
+    await new Promise(r => setTimeout(r, 100))
+
     const canvas = await html2canvas(el, {
       scale: 2,
       useCORS: true,
       backgroundColor: null,
+      logging: false,
+      allowTaint: true,
+      letterRendering: true,
     })
+
+    restore()
+
     if (customWidth) {
       el.style.width = origW
       el.style.minHeight = origH
     }
+
     return canvas
   }
 
@@ -36,7 +89,7 @@ export default function ExportBar({ posterSize, showToast }) {
       const canvas = await capture()
       if (!canvas) return
       const link = document.createElement('a')
-      link.download = 'event-poster.png'
+      link.download = 'posterfy-poster.png'
       link.href = canvas.toDataURL('image/png')
       link.click()
       showToast('PNG downloaded!')
@@ -49,7 +102,7 @@ export default function ExportBar({ posterSize, showToast }) {
       const canvas = await capture()
       if (!canvas) return
       const link = document.createElement('a')
-      link.download = 'event-poster.jpg'
+      link.download = 'posterfy-poster.jpg'
       link.href = canvas.toDataURL('image/jpeg', 0.95)
       link.click()
       showToast('JPEG downloaded!')
@@ -68,7 +121,7 @@ export default function ExportBar({ posterSize, showToast }) {
         format: [canvas.width, canvas.height],
       })
       pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height)
-      pdf.save('event-poster.pdf')
+      pdf.save('posterfy-poster.pdf')
       showToast('PDF downloaded!')
     } finally { setExporting(false) }
   }
@@ -95,28 +148,18 @@ export default function ExportBar({ posterSize, showToast }) {
     setExporting(true)
     try {
       const zip = new JSZip()
-      const el = document.getElementById('poster-capture')
-      if (!el) return
-      const origW = el.style.width
-      const origH = el.style.minHeight
 
       for (const size of socialSizes) {
-        el.style.width = size.width + 'px'
-        el.style.minHeight = size.height + 'px'
-        // Small delay for reflow
-        await new Promise(r => setTimeout(r, 100))
-        const canvas = await html2canvas(el, { scale: 2, useCORS: true, backgroundColor: null })
+        const canvas = await capture(size.width, size.height)
+        if (!canvas) continue
         const dataUrl = canvas.toDataURL('image/png')
         const base64 = dataUrl.split(',')[1]
-        zip.file(`poster-${size.id}-${size.width}x${size.height}.png`, base64, { base64: true })
+        zip.file(`posterfy-${size.id}-${size.width}x${size.height}.png`, base64, { base64: true })
       }
-
-      el.style.width = origW
-      el.style.minHeight = origH
 
       const blob = await zip.generateAsync({ type: 'blob' })
       const link = document.createElement('a')
-      link.download = 'event-posters-all-sizes.zip'
+      link.download = 'posterfy-all-sizes.zip'
       link.href = URL.createObjectURL(blob)
       link.click()
       URL.revokeObjectURL(link.href)
