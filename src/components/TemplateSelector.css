@@ -1,0 +1,80 @@
+.template-selector {
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid var(--border);
+}
+
+.section-title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-secondary);
+  margin-bottom: 0.8rem;
+}
+
+.template-grid {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.template-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  border: 2px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.75rem;
+  flex: 1;
+  min-width: 60px;
+}
+
+.template-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.template-card.active {
+  border-color: var(--accent);
+  background: rgba(233, 69, 96, 0.15);
+}
+
+.template-icon {
+  font-size: 1.3rem;
+}
+
+.template-name {
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .template-selector {
+    padding: 0.7rem;
+  }
+
+  .template-grid {
+    gap: 0.35rem;
+  }
+
+  .template-card {
+    padding: 0.5rem 0.4rem;
+    font-size: 0.68rem;
+    min-width: 50px;
+  }
+
+  .template-icon {
+    font-size: 1.1rem;
+  }
+
+  .section-title {
+    font-size: 0.72rem;
+    margin-bottom: 0.5rem;
+  }
+}

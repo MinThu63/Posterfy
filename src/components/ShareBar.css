@@ -1,0 +1,36 @@
+.share-bar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.share-btn {
+  padding: 0.35rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 0.78rem;
+  transition: all 0.2s;
+}
+
+.share-btn:hover {
+  border-color: var(--accent);
+  background: rgba(233, 69, 96, 0.1);
+}
+
+@media (max-width: 768px) {
+  .share-bar {
+    gap: 0.3rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .share-btn {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.72rem;
+    flex: 1;
+    text-align: center;
+  }
+}

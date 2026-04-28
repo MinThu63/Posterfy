@@ -1,0 +1,333 @@
+.poster-preview-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+.poster-scale-container {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .poster-preview-wrapper {
+    padding: 0.5rem 0;
+  }
+
+  .poster-scale-container {
+    transform: none !important;
+    width: 100%;
+  }
+
+  .poster {
+    width: 100% !important;
+    min-height: auto !important;
+    aspect-ratio: 5 / 7;
+    border-radius: 6px;
+  }
+
+  .poster-content {
+    padding: 1.2rem;
+    gap: 0.5rem;
+  }
+
+  .poster-title {
+    font-size: 1.6rem !important;
+  }
+
+  .poster-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .poster-description {
+    font-size: 0.65rem;
+  }
+
+  .poster-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .qr-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .modern-title { font-size: 1.8rem !important; }
+  .elegant-title { font-size: 1.6rem !important; }
+  .neon-title { font-size: 1.8rem !important; }
+  .minimal-title { font-size: 1.8rem !important; }
+  .festival-title { font-size: 2rem !important; }
+}
+
+/* Base poster */
+.poster {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  font-family: var(--font), sans-serif;
+  color: var(--text);
+}
+
+.poster-bg-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.poster-pattern {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.poster-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.poster-content {
+  position: relative;
+  z-index: 2;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: inherit;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.poster-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.poster-title {
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.poster-subtitle {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.poster-description {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  max-width: 380px;
+  line-height: 1.5;
+}
+
+/* QR Code */
+.qr-block {
+  margin-top: 0.5rem;
+}
+
+.qr-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 4px;
+}
+
+/* Sticker Layer */
+.sticker-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.draggable-sticker {
+  position: absolute;
+  cursor: grab;
+  pointer-events: auto;
+  user-select: none;
+  line-height: 1;
+  transition: filter 0.15s;
+}
+
+.draggable-sticker:hover {
+  filter: brightness(1.2);
+}
+
+.draggable-sticker:active {
+  cursor: grabbing;
+}
+
+/* ===== MODERN ===== */
+.poster-modern {
+  background: linear-gradient(135deg, var(--bg1) 0%, var(--bg2) 100%);
+}
+
+.poster-modern .poster-overlay {
+  background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.3) 100%);
+}
+
+.modern-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.modern-tag {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  opacity: 0.8;
+}
+
+.modern-presents {
+  font-size: 0.65rem;
+  letter-spacing: 5px;
+  opacity: 0.6;
+}
+
+.modern-title {
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.modern-divider {
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  margin: 0.3rem 0;
+}
+
+.modern-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: 100%;
+  max-width: 320px;
+}
+
+.detail-block {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-align: left;
+}
+
+.detail-icon { font-size: 1.3rem; }
+.detail-block div { display: flex; flex-direction: column; }
+.detail-block strong { font-size: 0.9rem; }
+.detail-block span { font-size: 0.75rem; opacity: 0.7; }
+
+.modern-footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.ticket-badge {
+  background: var(--accent);
+  color: var(--text);
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.contact-info {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+/* ===== ELEGANT ===== */
+.poster-elegant {
+  background: linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
+}
+
+.poster-elegant .poster-overlay {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.elegant-border {
+  border: 2px solid var(--accent);
+  border-radius: 2px;
+  padding: 1.5rem;
+  width: 100%;
+}
+
+.elegant-inner {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.elegant-ornament { color: var(--accent); font-size: 0.9rem; letter-spacing: 8px; }
+.elegant-presents { font-size: 0.8rem; font-style: italic; opacity: 0.8; }
+.elegant-title { font-size: 2.5rem; font-family: 'Playfair Display', serif; }
+.elegant-sub { font-style: italic; font-size: 1rem; }
+.elegant-details { display: flex; flex-direction: column; gap: 0.2rem; font-size: 0.9rem; }
+.elegant-address { font-size: 0.8rem; opacity: 0.7; }
+.elegant-desc { font-style: italic; }
+.elegant-footer { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; }
+.elegant-ticket { font-weight: 700; color: var(--accent); font-size: 0.95rem; }
+.elegant-contact { font-size: 0.75rem; opacity: 0.7; }
+
+/* ===== NEON ===== */
+.poster-neon { background: #0a0a0a; }
+.poster-neon .poster-overlay { background: radial-gradient(ellipse at center, rgba(139, 0, 255, 0.15) 0%, transparent 70%); }
+.neon-logo { filter: drop-shadow(0 0 10px var(--accent)); }
+.neon-glow-text { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 5px; color: var(--accent); text-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent); }
+.neon-title { font-size: 3rem; text-transform: uppercase; text-shadow: 0 0 20px var(--bg2), 0 0 40px var(--bg2); letter-spacing: 3px; }
+.neon-sub { color: var(--accent); text-shadow: 0 0 10px var(--accent); }
+.neon-line { width: 80%; height: 2px; background: linear-gradient(90deg, transparent, var(--accent), transparent); box-shadow: 0 0 10px var(--accent); }
+.neon-details { display: flex; flex-direction: column; gap: 0.8rem; }
+.neon-detail { display: flex; flex-direction: column; gap: 0.1rem; }
+.neon-label { font-size: 0.65rem; letter-spacing: 4px; color: var(--accent); text-shadow: 0 0 5px var(--accent); }
+.neon-small { font-size: 0.75rem; opacity: 0.6; }
+.neon-desc { color: rgba(255, 255, 255, 0.6); }
+.neon-footer { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; margin-top: 0.5rem; }
+.neon-badge { border: 1px solid var(--accent); padding: 0.4rem 1.5rem; border-radius: 2px; font-weight: 700; text-shadow: 0 0 5px var(--accent); box-shadow: 0 0 10px rgba(233, 69, 96, 0.3), inset 0 0 10px rgba(233, 69, 96, 0.1); }
+.neon-contact { font-size: 0.75rem; opacity: 0.5; }
+
+/* ===== MINIMAL ===== */
+.poster-minimal { background: var(--bg1); }
+.poster-minimal .poster-content { justify-content: center; gap: 1rem; }
+.minimal-logo { width: 40px; height: 40px; }
+.minimal-title { font-size: 2.8rem; font-weight: 300; letter-spacing: 4px; text-transform: uppercase; }
+.minimal-line { width: 40px; height: 1px; background: var(--text); opacity: 0.4; }
+.minimal-sub { font-weight: 300; opacity: 0.7; }
+.minimal-info { display: flex; flex-direction: column; gap: 0.2rem; font-size: 0.85rem; }
+.minimal-address { font-size: 0.75rem; opacity: 0.5; }
+.minimal-desc { font-weight: 300; }
+.minimal-footer { display: flex; gap: 0.5rem; font-size: 0.75rem; opacity: 0.5; flex-wrap: wrap; justify-content: center; }
+
+/* ===== FESTIVAL ===== */
+.poster-festival { background: linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 50%, var(--bg1) 100%); }
+.poster-festival .poster-overlay { background: repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255, 255, 255, 0.02) 20px, rgba(255, 255, 255, 0.02) 40px); }
+.festival-logo { width: 70px; height: 70px; }
+.festival-banner { display: flex; align-items: center; gap: 0.8rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; }
+.festival-star { color: var(--accent); font-size: 1.2rem; }
+.festival-title { font-size: 3.2rem; text-transform: uppercase; letter-spacing: 4px; line-height: 1; font-family: 'Bebas Neue', sans-serif; }
+.festival-sub { font-size: 1.1rem; color: var(--accent); }
+.festival-info-box { background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 8px; padding: 1rem 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; width: 100%; max-width: 320px; }
+.festival-date, .festival-venue { display: flex; flex-direction: column; gap: 0.1rem; font-size: 0.85rem; }
+.festival-big { font-size: 1.1rem; font-weight: 700; }
+.festival-desc { max-width: 350px; }
+.festival-footer { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+.festival-ticket { background: var(--accent); color: #fff; padding: 0.5rem 2rem; border-radius: 25px; font-weight: 700; font-size: 1rem; letter-spacing: 1px; }
+.festival-contact { font-size: 0.75rem; opacity: 0.6; }

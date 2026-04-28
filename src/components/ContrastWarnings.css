@@ -1,0 +1,26 @@
+.contrast-warnings {
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid var(--border);
+}
+
+.contrast-warning {
+  font-size: 0.75rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  margin-top: 0.4rem;
+  line-height: 1.4;
+}
+
+.contrast-error {
+  background: rgba(255, 50, 50, 0.1);
+  border: 1px solid rgba(255, 50, 50, 0.3);
+  color: #ff8888;
+}
+
+.contrast-warning.contrast-warning {
+  background: rgba(255, 200, 50, 0.1);
+  border: 1px solid rgba(255, 200, 50, 0.3);
+  color: #ffd666;
+}

@@ -1,0 +1,34 @@
+.pattern-selector {
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid var(--border);
+}
+
+.pattern-grid {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.pattern-chip {
+  padding: 0.35rem 0.7rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 0.72rem;
+  transition: all 0.2s;
+}
+
+.pattern-chip:hover {
+  border-color: var(--accent);
+  color: var(--text-primary);
+}
+
+.pattern-chip.active {
+  border-color: var(--accent);
+  background: rgba(233, 69, 96, 0.15);
+  color: var(--text-primary);
+}

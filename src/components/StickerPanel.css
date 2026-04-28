@@ -1,0 +1,77 @@
+.sticker-panel {
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid var(--border);
+}
+
+.sticker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.sticker-clear {
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 0.7rem;
+}
+
+.sticker-grid {
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+}
+
+.sticker-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.2s;
+}
+
+.sticker-btn:hover {
+  border-color: var(--accent);
+  transform: scale(1.1);
+}
+
+.sticker-list {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.sticker-count {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+}
+
+.sticker-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.2rem 0.5rem;
+  background: var(--bg-secondary);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.sticker-remove {
+  background: none;
+  border: none;
+  color: #ff6666;
+  cursor: pointer;
+  font-size: 0.75rem;
+  padding: 0.1rem 0.3rem;
+}

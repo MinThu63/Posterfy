@@ -1,0 +1,73 @@
+.export-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.8rem;
+  background: var(--bg-secondary);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.export-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.export-btn {
+  padding: 0.38rem 0.7rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.export-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: rgba(233, 69, 96, 0.15);
+}
+
+.export-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.batch-btn {
+  border-color: var(--accent);
+}
+
+.export-status {
+  font-size: 0.72rem;
+  color: var(--accent);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@media (max-width: 768px) {
+  .export-bar {
+    padding: 0.4rem 0.6rem;
+    gap: 0.3rem;
+  }
+
+  .export-btn {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  .export-label {
+    font-size: 0.68rem;
+  }
+}
