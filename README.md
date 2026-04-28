@@ -187,22 +187,9 @@ To deploy, push the `dist/` folder to GitHub Pages, Netlify, or any static host.
 
 >   <img width="481" height="840" alt="image" src="https://github.com/user-attachments/assets/59773197-c26b-4fba-a307-1767d997632b" />
 
->   <img width="2559" height="1423" alt="image" src="https://github.com/user-attachments/assets/1b5e16b0-c2c4-476e-8e15-26e3b95bceb9" />
-
 >   <img width="375" height="337" alt="image" src="https://github.com/user-attachments/assets/d1cb06cd-f531-4195-9698-e505c0db3589" />
 
 >   <img width="920" height="823" alt="image" src="https://github.com/user-attachments/assets/a2efa8fb-d84d-4770-8d45-001786044028" />
-
-
-
-
-
-
-
-> - User guide modal
-> - 
-
-
 
 ---
 
