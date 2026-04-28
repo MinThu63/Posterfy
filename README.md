@@ -178,13 +178,20 @@ To deploy, push the `dist/` folder to GitHub Pages, Netlify, or any static host.
 ## Screenshots
 
 > - <img width="2559" height="1387" alt="image" src="https://github.com/user-attachments/assets/1c5701f6-a625-4683-80ff-adac73409293" />
-    <img width="532" height="478" alt="image" src="https://github.com/user-attachments/assets/9524a38f-904a-4c7a-8b7e-7959472ac4cc" />
-    <img width="2559" height="1428" alt="image" src="https://github.com/user-attachments/assets/9ba03404-65a3-4dea-81f5-66616cd11e82" />
-    <img width="508" height="325" alt="image" src="https://github.com/user-attachments/assets/09591a37-f333-425a-be8f-c441d284b796" />
-    <img width="481" height="840" alt="image" src="https://github.com/user-attachments/assets/59773197-c26b-4fba-a307-1767d997632b" />
-    <img width="2559" height="1423" alt="image" src="https://github.com/user-attachments/assets/1b5e16b0-c2c4-476e-8e15-26e3b95bceb9" />
-    <img width="375" height="337" alt="image" src="https://github.com/user-attachments/assets/d1cb06cd-f531-4195-9698-e505c0db3589" />
-    <img width="920" height="823" alt="image" src="https://github.com/user-attachments/assets/a2efa8fb-d84d-4770-8d45-001786044028" />
+
+>   <img width="532" height="478" alt="image" src="https://github.com/user-attachments/assets/9524a38f-904a-4c7a-8b7e-7959472ac4cc" />
+
+> <img width="2559" height="1428" alt="image" src="https://github.com/user-attachments/assets/9ba03404-65a3-4dea-81f5-66616cd11e82" />
+
+>   <img width="508" height="325" alt="image" src="https://github.com/user-attachments/assets/09591a37-f333-425a-be8f-c441d284b796" />
+
+>   <img width="481" height="840" alt="image" src="https://github.com/user-attachments/assets/59773197-c26b-4fba-a307-1767d997632b" />
+
+>   <img width="2559" height="1423" alt="image" src="https://github.com/user-attachments/assets/1b5e16b0-c2c4-476e-8e15-26e3b95bceb9" />
+
+>   <img width="375" height="337" alt="image" src="https://github.com/user-attachments/assets/d1cb06cd-f531-4195-9698-e505c0db3589" />
+
+>   <img width="920" height="823" alt="image" src="https://github.com/user-attachments/assets/a2efa8fb-d84d-4770-8d45-001786044028" />
 
 
 
