@@ -177,7 +177,9 @@ To deploy, push the `dist/` folder to GitHub Pages, Netlify, or any static host.
 
 ## Screenshots
 
-> - <img width="2559" height="1387" alt="image" src="https://github.com/user-attachments/assets/1c5701f6-a625-4683-80ff-adac73409293" />
+><img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/592149a8-3285-48f4-a099-f89632f517f6" />
+
+>- <img width="2559" height="1387" alt="image" src="https://github.com/user-attachments/assets/1c5701f6-a625-4683-80ff-adac73409293" />
 
 >   <img width="532" height="478" alt="image" src="https://github.com/user-attachments/assets/9524a38f-904a-4c7a-8b7e-7959472ac4cc" />
 
